@@ -1,0 +1,9 @@
+F:\Fedesoft\VioMujerWeb\SqlData\bin\Debug\SqlData.dacpac
+F:\Fedesoft\VioMujerWeb\SqlData\bin\Debug\SqlData.dll
+F:\Fedesoft\VioMujerWeb\SqlData\bin\Debug\SqlData.pdb
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\Model.xml
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\refactor.xml
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\postdeploy.sql
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\predeploy.sql
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\SqlData.dll
+F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\SqlData.pdb

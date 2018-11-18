@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VioMujerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Denuncia">
+    <Key>
+      <PropertyRef Name="DenunciaId" />
+    </Key>
+    <Property Name="DenunciaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="FechaReporte" Type="datetime" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="Direccion" Type="varchar" MaxLength="1024" />
+    <Property Name="Longitud" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="Latitud" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="AtendidoPor" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaModificado" Type="datetime" />
+    <Property Name="FechaUltimoAcceso" Type="datetime" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="CiudadId" />
+    </Key>
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartamentoId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="DepartamentoId" />
+    </Key>
+    <Property Name="DepartamentoId" Type="bigint" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="InformationId" />
+    </Key>
+    <Property Name="InformationId" Type="bigint" Nullable="false" />
+    <Property Name="Texto" Type="text" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="1024" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuImage">
+    <Key>
+      <PropertyRef Name="MenuImageId" />
+    </Key>
+    <Property Name="MenuImageId" Type="bigint" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuImageItem">
+    <Key>
+      <PropertyRef Name="MenuImageItemId" />
+    </Key>
+    <Property Name="MenuImageItemId" Type="bigint" Nullable="false" />
+    <Property Name="MenuImageId" Type="bigint" Nullable="false" />
+    <Property Name="Texto" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Link" Type="varchar" MaxLength="1024" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VioMujer.Denuncia.View_Denuncia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Denuncia">
+    <Key>
+      <PropertyRef Name="DenunciaId" />
+    </Key>
+    <Property Name="DenunciaId" Type="bigint" Nullable="false" />
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="FechaReporte" Type="datetime" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="Direccion" Type="varchar" MaxLength="1024" />
+    <Property Name="Longitud" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="Latitud" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+    <Property Name="DepartamentoId" Type="bigint" />
+    <Property Name="Departamento" Type="varchar" MaxLength="50" />
+    <Property Name="AtendidoPorId" Type="bigint" />
+    <Property Name="AtendidoPor" Type="varchar" MaxLength="50" />
+    <Property Name="TotalPages" Type="int" Nullable="false" />
+    <Property Name="TotalReg" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Ciudad_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="Ciudad">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Denuncia_Ciudad">
+    <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+    <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudad">
+        <PropertyRef Name="CiudadId" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Denuncia_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="AtendidoPor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuImageItem_MenuImage">
+    <End Role="MenuImage" Type="Self.MenuImage" Multiplicity="1" />
+    <End Role="MenuImageItem" Type="Self.MenuImageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuImage">
+        <PropertyRef Name="MenuImageId" />
+      </Principal>
+      <Dependent Role="MenuImageItem">
+        <PropertyRef Name="MenuImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DenunciaList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Denuncia">
+    <Parameter Name="OrderBy" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Descendente" Type="bit" Mode="In" />
+    <Parameter Name="nRegPerPage" Type="int" Mode="In" />
+    <Parameter Name="nPage" Type="int" Mode="In" />
+    <Parameter Name="Filtro" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Autenticar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Seguridad">
+    <Parameter Name="Login" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PassWord" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ListaPaginada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Sistema">
+    <Parameter Name="OrderBy" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Descendente" Type="bit" Mode="In" />
+    <Parameter Name="nRegPerPage" Type="int" Mode="In" />
+    <Parameter Name="nPage" Type="int" Mode="In" />
+    <Parameter Name="Filtro" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="View" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Campos" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CampoOrderBy" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="VioMujerModelStoreContainer">
+    <EntitySet Name="Denuncia" EntityType="Self.Denuncia" Schema="Denuncia" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="Sistema" store:Type="Tables" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="Sistema" store:Type="Tables" />
+    <EntitySet Name="Information" EntityType="Self.Information" Schema="Sistema" store:Type="Tables" />
+    <EntitySet Name="MenuImage" EntityType="Self.MenuImage" Schema="Sistema" store:Type="Tables" />
+    <EntitySet Name="MenuImageItem" EntityType="Self.MenuImageItem" Schema="Sistema" store:Type="Tables" />
+    <EntitySet Name="View_Denuncia" EntityType="Self.View_Denuncia" store:Type="Views" store:Schema="Denuncia">
+      <DefiningQuery>SELECT 
+[View_Denuncia].[DenunciaId] AS [DenunciaId], 
+[View_Denuncia].[CiudadId] AS [CiudadId], 
+[View_Denuncia].[FechaReporte] AS [FechaReporte], 
+[View_Denuncia].[Descripcion] AS [Descripcion], 
+[View_Denuncia].[Direccion] AS [Direccion], 
+[View_Denuncia].[Longitud] AS [Longitud], 
+[View_Denuncia].[Latitud] AS [Latitud], 
+[View_Denuncia].[Ciudad] AS [Ciudad], 
+[View_Denuncia].[DepartamentoId] AS [DepartamentoId], 
+[View_Denuncia].[Departamento] AS [Departamento], 
+[View_Denuncia].[AtendidoPorId] AS [AtendidoPorId], 
+[View_Denuncia].[AtendidoPor] AS [AtendidoPor], 
+[View_Denuncia].[TotalPages] AS [TotalPages], 
+[View_Denuncia].[TotalReg] AS [TotalReg]
+FROM [Denuncia].[View_Denuncia] AS [View_Denuncia]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Ciudad_Departamento" Association="Self.FK_Ciudad_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Ciudad" EntitySet="Ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Denuncia_Ciudad" Association="Self.FK_Denuncia_Ciudad">
+      <End Role="Ciudad" EntitySet="Ciudad" />
+      <End Role="Denuncia" EntitySet="Denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Denuncia_Usuario" Association="Self.FK_Denuncia_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Denuncia" EntitySet="Denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuImageItem_MenuImage" Association="Self.FK_MenuImageItem_MenuImage">
+      <End Role="MenuImage" EntitySet="MenuImage" />
+      <End Role="MenuImageItem" EntitySet="MenuImageItem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

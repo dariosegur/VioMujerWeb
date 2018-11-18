@@ -1,0 +1,15 @@
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Negocio.dll.config
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Negocio.dll
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Negocio.pdb
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Datos.dll
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\EntityFramework.dll
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Datos.pdb
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\Datos.dll.config
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\PaisesCiudadesServices.pdb
+F:\Fedesoft\VioMujerWeb\Negocio\bin\Release\EntityFramework.xml
+F:\Fedesoft\VioMujerWeb\Negocio\obj\Release\Negocio.csprojAssemblyReference.cache
+F:\Fedesoft\VioMujerWeb\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
+F:\Fedesoft\VioMujerWeb\Negocio\obj\Release\Negocio.csproj.CopyComplete
+F:\Fedesoft\VioMujerWeb\Negocio\obj\Release\Negocio.dll
+F:\Fedesoft\VioMujerWeb\Negocio\obj\Release\Negocio.pdb

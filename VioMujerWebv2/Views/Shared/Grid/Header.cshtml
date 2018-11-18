@@ -1,0 +1,14 @@
+﻿@model VioMujerWeb.Models.GridHeader
+<th>
+    <div style="display:flex;flex-direction:column">
+        <div>
+            <div style="cursor:pointer; display:flex;flex-direction:row" onclick="ChangeFilterField('@Model.Field')">
+                <div>@Model.Text </div>
+                <div class="@(Model.OrderBy == Model.Field ? (Model.Descendente?"fa fa-arrow-up":"fa fa-arrow-down") : "")" />
+            </div>
+        </div>
+        <div>
+            <input id="@Model.Field" type ="text" style="width:100%" value="@Model.Value" onkeypress="OnFilterChanged(event,this)" @(!Model.Hasfilter?"hidden":"")/>           
+        </div>
+    </div>
+</th>

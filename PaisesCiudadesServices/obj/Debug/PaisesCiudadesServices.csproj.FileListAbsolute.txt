@@ -1,0 +1,5 @@
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\bin\Debug\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\bin\Debug\PaisesCiudadesServices.pdb
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Debug\PaisesCiudadesServices.csproj.CoreCompileInputs.cache
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Debug\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Debug\PaisesCiudadesServices.pdb

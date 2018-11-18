@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="SqlData.dll" />
+			<Metadata Name="FileName" Value="F:\FEDESOFT\VIOMUJERWEB\SQLDATA\OBJ\DEBUG\SQLDATA.DLL" />
+			<Metadata Name="AssemblyName" Value="SqlData" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="F:\Fedesoft\VioMujerWeb\SqlData\obj\Debug\SqlData.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlSchema" Name="[Denuncia]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[Denuncia].[Denuncia]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[DenunciaId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[CiudadId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[FechaReporte]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[Descripcion]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1024" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[Direccion]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1024" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[Longitud]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="8" />
+									<Property Name="Precision" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[Latitud]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="8" />
+									<Property Name="Precision" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Denuncia].[Denuncia].[AtendidoPor]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[Denuncia].[DenunciaList]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE @View AS VARCHAR(MAX) = 'Denuncia.View_Denuncia';
+	DECLARE @Campos AS VARCHAR(MAX) = '
+	DenunciaId,CiudadId,FechaReporte,Descripcion,Direccion,Longitud,Latitud,Ciudad,DepartamentoId,Departamento,AtendidoPorId,AtendidoPor
+	';
+	DECLARE @CampoOrderBy AS VARCHAR(MAX)= 'DenunciaId';
+	EXEC  Sistema.ListaPaginada @OrderBy=@OrderBy, @Descendente=@Descendente, @nRegPerPage= @nRegPerPage ,@nPage = @nPage, @Filtro=@Filtro, @View=@View, @Campos=@Campos,@CampoOrderBy=@CampoOrderBy
+	
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@OrderBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[DenunciaList].[@OrderBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Descendente]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[DenunciaList].[@Descendente]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@nRegPerPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[DenunciaList].[@nRegPerPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@nPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[DenunciaList].[@nPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Filtro]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[DenunciaList].[@Filtro]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@View]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Campos]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@CampoOrderBy]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Denuncia].[DenunciaList].[@OrderBy]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Denuncia].[DenunciaList].[@Descendente]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Denuncia].[DenunciaList].[@nRegPerPage]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[10]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Denuncia].[DenunciaList].[@nPage]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Denuncia].[DenunciaList].[@Filtro]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="198" />
+				<Property Name="Length" Value="992" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Dario Segura&#xD;&#xA;-- Create date: 2016-05-01&#xD;&#xA;-- Description:&#x9;SP para listas de usuarios&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE [Denuncia].[DenunciaList]&#xD;&#xA;&#x9;@OrderBy AS NVARCHAR(MAX)=NULL,&#xD;&#xA;&#x9;@Descendente AS bit=0,&#xD;&#xA;&#x9;@nRegPerPage AS INTEGER=10, -- Numero de registros por página&#xD;&#xA;&#x9;@nPage AS INTEGER = 1, --Numero de pagina a mostrar iniciando en 1&#xD;&#xA;&#x9;@Filtro AS NVARCHAR(MAX)=NULL -- Where de la tabla&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Denuncia].[FK_Denuncia_Ciudad]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[CiudadId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[CiudadId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Sistema].[Ciudad]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Denuncia].[FK_Denuncia_Usuario]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[AtendidoPor]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[UsuarioId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Seguridad].[Usuario]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Denuncia].[PK_Denuncia]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[DenunciaId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+		<Element Type="SqlView" Name="[Denuncia].[View_Denuncia]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT      Denuncia.Denuncia.DenunciaId, Denuncia.Denuncia.CiudadId, Denuncia.Denuncia.FechaReporte, Denuncia.Denuncia.Descripcion, Denuncia.Denuncia.Direccion, Denuncia.Denuncia.Longitud, Denuncia.Denuncia.Latitud, 
+                         Sistema.Ciudad.Nombre AS Ciudad, Sistema.Ciudad.DepartamentoId, Sistema.Departamento.Nombre AS Departamento, Denuncia.AtendidoPor as AtendidoPorId, Seguridad.Usuario.Login as AtendidoPor
+						 ,0 AS TotalPages, 0 AS TotalReg
+FROM        Denuncia.Denuncia 
+			LEFT OUTER JOIN Sistema.Ciudad ON Sistema.Ciudad.CiudadId = Denuncia.Denuncia.CiudadId 
+			LEFT OUTER JOIN Sistema.Departamento ON Sistema.Departamento.DepartamentoId = Sistema.Ciudad.DepartamentoId
+			LEFT OUTER JOIN Seguridad.Usuario ON Denuncia.AtendidoPor=Seguridad.Usuario.UsuarioId]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[DenunciaId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[DenunciaId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[CiudadId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[CiudadId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[FechaReporte]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[FechaReporte]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Descripcion]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[Descripcion]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Direccion]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[Direccion]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Longitud]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[Longitud]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Latitud]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[Latitud]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Ciudad]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Sistema].[Ciudad].[Nombre]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[DepartamentoId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Sistema].[Ciudad].[DepartamentoId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[Departamento]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Sistema].[Departamento].[Nombre]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[AtendidoPorId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Denuncia].[Denuncia].[AtendidoPor]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[AtendidoPor]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Seguridad].[Usuario].[Login]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[TotalPages]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[Denuncia].[View_Denuncia].[TotalReg]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Denuncia].[Denuncia]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Ciudad]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[CiudadId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[CiudadId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Departamento]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Departamento].[DepartamentoId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[DepartamentoId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[AtendidoPor]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[UsuarioId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[DenunciaId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[CiudadId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[FechaReporte]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[Descripcion]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[Direccion]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[Longitud]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[Latitud]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[Nombre]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[DepartamentoId]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[Departamento].[Nombre]" />
+				</Entry>
+				<Entry>
+					<References Name="[Denuncia].[Denuncia].[AtendidoPor]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[Login]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Denuncia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="4" />
+				<Property Name="Length" Value="844" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE VIEW [Denuncia].[View_Denuncia]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[Reporte]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlSchema" Name="[Seguridad]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[Seguridad].[Autenticar]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	Select * from Seguridad.Usuario u
+	where u.Login=@Login and u.Activo=1 and u.Contrasena=@PassWord
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Seguridad].[Usuario]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Autenticar].[@Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[Activo]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Usuario].[Contrasena]" />
+				</Entry>
+				<Entry>
+					<References Name="[Seguridad].[Autenticar].[@PassWord]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Seguridad].[Autenticar].[@Login]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Seguridad].[Autenticar].[@PassWord]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Seguridad]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="194" />
+				<Property Name="Length" Value="406" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;&lt;Author,,Name&gt;&#xD;&#xA;-- Create date: &lt;Create Date,,&gt;&#xD;&#xA;-- Description:&#x9;&lt;Description,,&gt;&#xD;&#xA;-- =============================================&#xD;&#xA;CREATe PROCEDURE [Seguridad].[Autenticar]&#xD;&#xA;&#x9;@Login as VARCHAR(MAX),&#xD;&#xA;&#x9;@PassWord as VARCHAR(MAX)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Seguridad].[PK_Usuario]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Seguridad].[Usuario].[UsuarioId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Seguridad].[Usuario]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlTable" Name="[Seguridad].[Usuario]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[UsuarioId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[Login]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[Contrasena]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[FechaCreacion]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[FechaModificado]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[FechaUltimoAcceso]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Seguridad].[Usuario].[Activo]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Seguridad]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+		<Element Type="SqlSchema" Name="[Sistema]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[Sistema].[Ciudad]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Sistema].[Ciudad].[CiudadId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Sistema].[Ciudad].[Nombre]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Sistema].[Ciudad].[DepartamentoId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Sistema]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlTable" Name="[Sistema].[Departamento]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Sistema].[Departamento].[DepartamentoId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Sistema].[Departamento].[Nombre]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Sistema]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Sistema].[FK_Ciudad_Departamento]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Sistema].[Ciudad].[DepartamentoId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Sistema].[Ciudad]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Sistema].[Departamento].[DepartamentoId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Sistema].[Departamento]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[Sistema].[ListaPaginada]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	--DECLARE @View AS VARCHAR(MAX) = 'Seguridad.View_Usuarios';
+	--DECLARE @Campos AS VARCHAR(MAX) = '[UserId],[Activo],[FechaCreacion],[FechaModificacion],[Nombres],[Apellidos],[Login]';
+
+	DECLARE @sqlCmdCountReg AS NVARCHAR(MAX) = 'Select COUNT(*) from '+@View+' @WHERE';
+	DECLARE @sqlCmd AS NVARCHAR(MAX) = 'SELECT TOP @nRegPerPage *,(T.TotalReg/@nRegPerPage)+(IIF(T.TotalReg%@nRegPerPage=0,0,1)) AS TotalPages from (Select '+@Campos+',ROW_NUMBER() OVER (@ORDERBY) AS Indice,(@sqlCmdCountReg) AS TotalReg from '+@View+' @WHERE) T WHERE T.Indice>=@StartIndex';
+	DECLARE @OrderBySelect AS NVARCHAR(MAx);
+	DECLARE @StartIndex AS INTEGER;
+	DECLARE @nReg AS INTEGER=0;
+
+	--Configura el Order by
+	SET @OrderBySelect = COALESCE(' Order By '+@OrderBy+IIF(@Descendente=1,' DESC',' ASC'),' Order By '+@CampoOrderBy);
+	--Encuentra el indice del primer registro a mostrar
+	SET @StartIndex = (@nPage*@nRegPerPage) - @nRegPerPage + 1;
+	--Aplica filtro al contador
+	SET @sqlCmdCountReg = REPLACE(@sqlCmdCountReg, '@WHERE',IIF(@Filtro IS NULL,'','WHERE '+@Filtro));
+
+	--Aplica el order by
+	SET @sqlCmd = REPLACE(@sqlCmd, '@ORDERBY',@OrderBySelect);
+	--Aplica Maximo de registros
+	SET @sqlCmd = REPLACE(@sqlCmd, '@nRegPerPage',@nRegPerPage);
+	--Aplica numero de pagina	
+	SET @sqlCmd = REPLACE(@sqlCmd, '@StartIndex',@StartIndex);
+	--Aplica filtro
+	SET @sqlCmd = REPLACE(@sqlCmd, '@WHERE',IIF(@Filtro IS NULL,'','WHERE '+@Filtro));
+	--Aplica filtro para total de registros
+	SET @sqlCmd = REPLACE(@sqlCmd, '@sqlCmdCountReg',@sqlCmdCountReg);
+
+
+	print @sqlCmd
+	EXECUTE sp_executesql @statement=@sqlCmd;
+	
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@View]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Campos]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@OrderBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Descendente]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@CampoOrderBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@nPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@nRegPerPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[Sistema].[ListaPaginada].[@Filtro]" />
+				</Entry>
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@OrderBy]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@Descendente]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@nRegPerPage]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[10]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@nPage]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@Filtro]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@View]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@Campos]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[Sistema].[ListaPaginada].[@CampoOrderBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Sistema]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="192" />
+				<Property Name="Length" Value="2197" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Dario Segura&#xD;&#xA;-- Create date: 2017-11-12&#xD;&#xA;-- Description:&#x9;SP para paginación&#xD;&#xA;-- =============================================&#xD;&#xA;create PROCEDURE [Sistema].[ListaPaginada]&#xD;&#xA;&#x9;@OrderBy AS NVARCHAR(MAX)=NULL,&#xD;&#xA;&#x9;@Descendente AS bit=0,&#xD;&#xA;&#x9;@nRegPerPage AS INTEGER=10, -- Numero de registros por página&#xD;&#xA;&#x9;@nPage AS INTEGER = 1, --Numero de pagina a mostrar iniciando en 1&#xD;&#xA;&#x9;@Filtro AS NVARCHAR(MAX)=NULL, -- Where de la tabla&#xD;&#xA;&#x9;@View AS VARCHAR(MAX),&#xD;&#xA;&#x9;@Campos AS VARCHAR(MAX),&#xD;&#xA;&#x9;@CampoOrderBy AS VARCHAR(MAX)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Sistema].[PK_Ciudad]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Sistema].[Ciudad].[CiudadId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Sistema].[Ciudad]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[Sistema].[PK_Departamento]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Sistema].[Departamento].[DepartamentoId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Sistema].[Departamento]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlView].[Denuncia].[View_Denuncia].[MS_DiagramPane1]">
+			<Property Name="Value">
+				<Value><![CDATA[N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "Denuncia (Denuncia)"
+            Begin Extent = 
+               Top = 62
+               Left = 36
+               Bottom = 309
+               Right = 206
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Ciudad (Sistema)"
+            Begin Extent = 
+               Top = 168
+               Left = 397
+               Bottom = 307
+               Right = 572
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Departamento (Sistema)"
+            Begin Extent = 
+               Top = 142
+               Left = 736
+               Bottom = 265
+               Right = 911
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[Denuncia].[View_Denuncia]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlView].[Denuncia].[View_Denuncia].[MS_DiagramPaneCount]">
+			<Property Name="Value">
+				<Value><![CDATA[1]]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[Denuncia].[View_Denuncia]" />
+				</Entry>
+			</Relationship>
+		</Element>
+	</Model>
+</DataSchemaModel>

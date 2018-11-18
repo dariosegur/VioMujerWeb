@@ -1,0 +1,40 @@
+﻿@using VioMujerWeb.Models;
+@model VioMujerWeb.Models.Denuncia
+@{
+    ViewBag.Title = "Denuncia";
+    string hederView = "~/Views/Shared/Grid/Header.cshtml";
+    var filtro = ((Negocio.Denuncia)Model.Filtros) ?? new Negocio.Denuncia();
+}
+
+<h2>Denuncia</h2>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            @Html.Partial(hederView, new GridHeader(Model, "ID#", "DenunciaId", filtro.DenunciaId.ToString()))
+            @Html.Partial(hederView, new GridHeader(Model, "Descripción", "Descripcion", filtro.Descripcion))
+            @Html.Partial(hederView, new GridHeader(Model, "Dirección", "Direccion", filtro.Direccion))
+            @Html.Partial(hederView, new GridHeader(Model, "Departamento", "Departamento", filtro.Departamento))
+            @Html.Partial(hederView, new GridHeader(Model, "Ciudad", "Ciudad", filtro.Ciudad))
+            @Html.Partial(hederView, new GridHeader(Model, "Atendido por", "AtendidoPor", filtro.AtendidoPor))
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.Denuncias)
+        {
+            <tr onclick="OnRowClikc('@m.DenunciaId')">
+                <td>@m.DenunciaId</td>
+                <td>@m.Descripcion</td>
+                <td>@m.Direccion</td>
+                <td>@m.Departamento</td>
+                <td>@m.Ciudad</td>
+                <td>@m.AtendidoPor</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.Partial("~/Views/Shared/Grid/Pagination.cshtml", Model)
+
+@section scripts{
+    <script src="~/Scripts/App/Denuncia.js"></script>
+}

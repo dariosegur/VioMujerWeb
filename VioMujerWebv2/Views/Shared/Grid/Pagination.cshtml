@@ -1,0 +1,14 @@
+﻿@model VioMujerWeb.Models.BasicModelGrid
+<div class="panel-footer">
+    <div class="row">
+        <div class="col col-xs-4">
+            Pagina @Model.nCurPage de @Model.nTotalPages
+        </div>
+        <div class="row">
+            @for (int c = Model.nCurPage - 10 < 0 ? 1 : Model.nCurPage - 10; c <= ((Model.nCurPage + 10) > Model.nTotalPages ? Model.nTotalPages : Model.nCurPage + 10); c++)
+            {
+                <a onclick="changePage(@c)" style="cursor:pointer;@(Model.nCurPage==c?"text-decoration:underline":"")">@c  </a>
+            }
+        </div>
+    </div>
+</div>

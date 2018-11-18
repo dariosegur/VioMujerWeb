@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ad268ca04494a29b7ea6ab0dc876280" Name="Diagram1" ZoomLevel="146">
+        <EntityTypeShape EntityType="VioMujerModel.MenuImage" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="VioMujerModel.MenuImageItem" Width="1.5" PointX="3" PointY="5.875" />
+        <AssociationConnector Association="VioMujerModel.FK_MenuImageItem_MenuImage" />
+        <EntityTypeShape EntityType="VioMujerModel.Usuario" Width="1.5" PointX="7.75" PointY="1.125" />
+        <EntityTypeShape EntityType="VioMujerModel.Ciudad" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="VioMujerModel.Departamento" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="VioMujerModel.Information" Width="1.5" PointX="4.75" PointY="6.25" />
+        <EntityTypeShape EntityType="VioMujerModel.View_Denuncia" Width="1.5" PointX="9.5" PointY="1.125" />
+        <AssociationConnector Association="VioMujerModel.FK_Ciudad_Departamento" />
+        <EntityTypeShape EntityType="VioMujerModel.Denuncia" Width="1.5" PointX="5.25" PointY="1.125" />
+        <AssociationConnector Association="VioMujerModel.FK_Denuncia_Ciudad" />
+        <AssociationConnector Association="VioMujerModel.FK_Denuncia_Usuario" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

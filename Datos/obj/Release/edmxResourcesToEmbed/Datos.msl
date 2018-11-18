@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VioMujerModelStoreContainer" CdmEntityContainer="VioMujerEntities">
+    <EntitySetMapping Name="Denuncias">
+      <EntityTypeMapping TypeName="VioMujerModel.Denuncia">
+        <MappingFragment StoreEntitySet="Denuncia">
+          <ScalarProperty Name="AtendidoPor" ColumnName="AtendidoPor" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+          <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+          <ScalarProperty Name="DenunciaId" ColumnName="DenunciaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudads">
+      <EntityTypeMapping TypeName="VioMujerModel.Ciudad">
+        <MappingFragment StoreEntitySet="Ciudad">
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentoes">
+      <EntityTypeMapping TypeName="VioMujerModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DenunciaList" FunctionName="VioMujerModel.Store.DenunciaList" />
+    <FunctionImportMapping FunctionImportName="Autenticar" FunctionName="VioMujerModel.Store.Autenticar" />
+    <FunctionImportMapping FunctionImportName="ListaPaginada" FunctionName="VioMujerModel.Store.ListaPaginada" />
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="VioMujerModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="FechaUltimoAcceso" ColumnName="FechaUltimoAcceso" />
+          <ScalarProperty Name="FechaModificado" ColumnName="FechaModificado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Denuncia">
+      <EntityTypeMapping TypeName="VioMujerModel.View_Denuncia">
+        <MappingFragment StoreEntitySet="View_Denuncia">
+          <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+          <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+          <ScalarProperty Name="AtendidoPor" ColumnName="AtendidoPor" />
+          <ScalarProperty Name="AtendidoPorId" ColumnName="AtendidoPorId" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+          <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+          <ScalarProperty Name="DenunciaId" ColumnName="DenunciaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuImages">
+      <EntityTypeMapping TypeName="VioMujerModel.MenuImage">
+        <MappingFragment StoreEntitySet="MenuImage">
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="MenuImageId" ColumnName="MenuImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuImageItems">
+      <EntityTypeMapping TypeName="VioMujerModel.MenuImageItem">
+        <MappingFragment StoreEntitySet="MenuImageItem">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="MenuImageId" ColumnName="MenuImageId" />
+          <ScalarProperty Name="MenuImageItemId" ColumnName="MenuImageItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="VioMujerModel.Information">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="InformationId" ColumnName="InformationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

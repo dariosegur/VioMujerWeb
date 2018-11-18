@@ -1,0 +1,10 @@
+F:\Fedesoft\VioMujerWeb\Datos\bin\Debug\Datos.dll.config
+F:\Fedesoft\VioMujerWeb\Datos\bin\Debug\Datos.dll
+F:\Fedesoft\VioMujerWeb\Datos\bin\Debug\Datos.pdb
+F:\Fedesoft\VioMujerWeb\Datos\bin\Debug\EntityFramework.dll
+F:\Fedesoft\VioMujerWeb\Datos\bin\Debug\EntityFramework.xml
+F:\Fedesoft\VioMujerWeb\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+F:\Fedesoft\VioMujerWeb\Datos\obj\Debug\Datos.csproj.CopyComplete
+F:\Fedesoft\VioMujerWeb\Datos\obj\Debug\Datos.dll
+F:\Fedesoft\VioMujerWeb\Datos\obj\Debug\Datos.pdb
+F:\Fedesoft\VioMujerWeb\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

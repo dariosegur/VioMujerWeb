@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VioMujerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Denuncia">
+          <Key>
+            <PropertyRef Name="DenunciaId" />
+          </Key>
+          <Property Name="DenunciaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CiudadId" Type="bigint" />
+          <Property Name="FechaReporte" Type="datetime" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+          <Property Name="Direccion" Type="varchar" MaxLength="1024" />
+          <Property Name="Longitud" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="Latitud" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="AtendidoPor" Type="bigint" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="1024" />
+          <Property Name="Telefono" Type="varchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificado" Type="datetime" />
+          <Property Name="FechaUltimoAcceso" Type="datetime" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="CiudadId" />
+          </Key>
+          <Property Name="CiudadId" Type="bigint" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartamentoId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="DepartamentoId" />
+          </Key>
+          <Property Name="DepartamentoId" Type="bigint" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="InformationId" />
+          </Key>
+          <Property Name="InformationId" Type="bigint" Nullable="false" />
+          <Property Name="Texto" Type="text" Nullable="false" />
+          <Property Name="Imagen" Type="varchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuImage">
+          <Key>
+            <PropertyRef Name="MenuImageId" />
+          </Key>
+          <Property Name="MenuImageId" Type="bigint" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuImageItem">
+          <Key>
+            <PropertyRef Name="MenuImageItemId" />
+          </Key>
+          <Property Name="MenuImageItemId" Type="bigint" Nullable="false" />
+          <Property Name="MenuImageId" Type="bigint" Nullable="false" />
+          <Property Name="Texto" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="Imagen" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VioMujer.Denuncia.View_Denuncia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Denuncia">
+          <Key>
+            <PropertyRef Name="DenunciaId" />
+            <PropertyRef Name="FechaReporte" />
+            <PropertyRef Name="TotalPages" />
+            <PropertyRef Name="TotalReg" />
+            <PropertyRef Name="CiudadId" />
+          </Key>
+          <Property Name="DenunciaId" Type="bigint" Nullable="false" />
+          <Property Name="CiudadId" Type="bigint" Nullable="false" />
+          <Property Name="FechaReporte" Type="datetime" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+          <Property Name="Direccion" Type="varchar" MaxLength="1024" />
+          <Property Name="Longitud" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="Latitud" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="1024" />
+          <Property Name="Telefono" Type="varchar" MaxLength="1024" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="DepartamentoId" Type="bigint" />
+          <Property Name="Departamento" Type="varchar" MaxLength="50" />
+          <Property Name="AtendidoPorId" Type="bigint" />
+          <Property Name="AtendidoPor" Type="varchar" MaxLength="50" />
+          <Property Name="TotalPages" Type="int" Nullable="false" />
+          <Property Name="TotalReg" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ciudad_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="DepartamentoId" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Denuncia_Ciudad">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+          <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="CiudadId" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Denuncia_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="AtendidoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuImageItem_MenuImage">
+          <End Role="MenuImage" Type="Self.MenuImage" Multiplicity="1" />
+          <End Role="MenuImageItem" Type="Self.MenuImageItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuImage">
+              <PropertyRef Name="MenuImageId" />
+            </Principal>
+            <Dependent Role="MenuImageItem">
+              <PropertyRef Name="MenuImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DenunciaList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Denuncia">
+          <Parameter Name="OrderBy" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Descendente" Type="bit" Mode="In" />
+          <Parameter Name="nRegPerPage" Type="int" Mode="In" />
+          <Parameter Name="nPage" Type="int" Mode="In" />
+          <Parameter Name="Filtro" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Autenticar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Seguridad">
+          <Parameter Name="Login" Type="varchar(max)" Mode="In" />
+          <Parameter Name="PassWord" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="ListaPaginada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Sistema">
+          <Parameter Name="OrderBy" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Descendente" Type="bit" Mode="In" />
+          <Parameter Name="nRegPerPage" Type="int" Mode="In" />
+          <Parameter Name="nPage" Type="int" Mode="In" />
+          <Parameter Name="Filtro" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="View" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Campos" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CampoOrderBy" Type="varchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="VioMujerModelStoreContainer">
+          <EntitySet Name="Denuncia" EntityType="Self.Denuncia" Schema="Denuncia" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="Sistema" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="Sistema" store:Type="Tables" />
+          <EntitySet Name="Information" EntityType="Self.Information" Schema="Sistema" store:Type="Tables" />
+          <EntitySet Name="MenuImage" EntityType="Self.MenuImage" Schema="Sistema" store:Type="Tables" />
+          <EntitySet Name="MenuImageItem" EntityType="Self.MenuImageItem" Schema="Sistema" store:Type="Tables" />
+          <EntitySet Name="View_Denuncia" EntityType="Self.View_Denuncia" store:Type="Views" store:Schema="Denuncia">
+            <DefiningQuery>SELECT 
+[View_Denuncia].[DenunciaId] AS [DenunciaId], 
+[View_Denuncia].[CiudadId] AS [CiudadId], 
+[View_Denuncia].[FechaReporte] AS [FechaReporte], 
+[View_Denuncia].[Descripcion] AS [Descripcion], 
+[View_Denuncia].[Direccion] AS [Direccion], 
+[View_Denuncia].[Longitud] AS [Longitud], 
+[View_Denuncia].[Latitud] AS [Latitud], 
+[View_Denuncia].[Ubicacion] AS [Ubicacion], 
+[View_Denuncia].[Telefono] AS [Telefono], 
+[View_Denuncia].[Ciudad] AS [Ciudad], 
+[View_Denuncia].[DepartamentoId] AS [DepartamentoId], 
+[View_Denuncia].[Departamento] AS [Departamento], 
+[View_Denuncia].[AtendidoPorId] AS [AtendidoPorId], 
+[View_Denuncia].[AtendidoPor] AS [AtendidoPor], 
+[View_Denuncia].[TotalPages] AS [TotalPages], 
+[View_Denuncia].[TotalReg] AS [TotalReg]
+FROM [Denuncia].[View_Denuncia] AS [View_Denuncia]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Ciudad_Departamento" Association="Self.FK_Ciudad_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Ciudad" EntitySet="Ciudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Denuncia_Ciudad" Association="Self.FK_Denuncia_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Denuncia" EntitySet="Denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Denuncia_Usuario" Association="Self.FK_Denuncia_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Denuncia" EntitySet="Denuncia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuImageItem_MenuImage" Association="Self.FK_MenuImageItem_MenuImage">
+            <End Role="MenuImage" EntitySet="MenuImage" />
+            <End Role="MenuImageItem" EntitySet="MenuImageItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VioMujerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VioMujerEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="DenunciaList" EntitySet="View_Denuncia" ReturnType="Collection(VioMujerModel.View_Denuncia)">
+            <Parameter Name="OrderBy" Mode="In" Type="String" />
+            <Parameter Name="Descendente" Mode="In" Type="Boolean" />
+            <Parameter Name="nRegPerPage" Mode="In" Type="Int32" />
+            <Parameter Name="nPage" Mode="In" Type="Int32" />
+            <Parameter Name="Filtro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Autenticar" EntitySet="Usuarios" ReturnType="Collection(VioMujerModel.Usuario)">
+            <Parameter Name="Login" Mode="In" Type="String" />
+            <Parameter Name="PassWord" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ListaPaginada">
+            <Parameter Name="OrderBy" Mode="In" Type="String" />
+            <Parameter Name="Descendente" Mode="In" Type="Boolean" />
+            <Parameter Name="nRegPerPage" Mode="In" Type="Int32" />
+            <Parameter Name="nPage" Mode="In" Type="Int32" />
+            <Parameter Name="Filtro" Mode="In" Type="String" />
+            <Parameter Name="View" Mode="In" Type="String" />
+            <Parameter Name="Campos" Mode="In" Type="String" />
+            <Parameter Name="CampoOrderBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="MenuImages" EntityType="VioMujerModel.MenuImage" />
+          <EntitySet Name="MenuImageItems" EntityType="VioMujerModel.MenuImageItem" />
+          <AssociationSet Name="FK_MenuImageItem_MenuImage" Association="VioMujerModel.FK_MenuImageItem_MenuImage">
+            <End Role="MenuImage" EntitySet="MenuImages" />
+            <End Role="MenuImageItem" EntitySet="MenuImageItems" />
+          </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="VioMujerModel.Usuario" />
+          <EntitySet Name="Ciudads" EntityType="VioMujerModel.Ciudad" />
+          <EntitySet Name="Departamentoes" EntityType="VioMujerModel.Departamento" />
+          <EntitySet Name="Information" EntityType="VioMujerModel.Information" />
+          <EntitySet Name="View_Denuncia" EntityType="VioMujerModel.View_Denuncia" />
+          <AssociationSet Name="FK_Ciudad_Departamento" Association="VioMujerModel.FK_Ciudad_Departamento">
+            <End Role="Departamento" EntitySet="Departamentoes" />
+            <End Role="Ciudad" EntitySet="Ciudads" />
+          </AssociationSet>
+          <EntitySet Name="Denuncias" EntityType="VioMujerModel.Denuncia" />
+          <AssociationSet Name="FK_Denuncia_Ciudad" Association="VioMujerModel.FK_Denuncia_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudads" />
+            <End Role="Denuncia" EntitySet="Denuncias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Denuncia_Usuario" Association="VioMujerModel.FK_Denuncia_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Denuncia" EntitySet="Denuncias" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="Autenticar_Result">
+          <Property Type="Int64" Name="UsuarioId" Nullable="false" />
+          <Property Type="String" Name="Login" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Contrasena" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FechaModificado" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaUltimoAcceso" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Activo" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="MenuImage">
+          <Key>
+            <PropertyRef Name="MenuImageId" />
+          </Key>
+          <Property Name="MenuImageId" Type="Int64" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MenuImageItems" Relationship="VioMujerModel.FK_MenuImageItem_MenuImage" FromRole="MenuImage" ToRole="MenuImageItem" />
+        </EntityType>
+        <EntityType Name="MenuImageItem">
+          <Key>
+            <PropertyRef Name="MenuImageItemId" />
+          </Key>
+          <Property Name="MenuImageItemId" Type="Int64" Nullable="false" />
+          <Property Name="MenuImageId" Type="Int64" Nullable="false" />
+          <Property Name="Texto" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Imagen" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MenuImage" Relationship="VioMujerModel.FK_MenuImageItem_MenuImage" FromRole="MenuImageItem" ToRole="MenuImage" />
+        </EntityType>
+        <Association Name="FK_MenuImageItem_MenuImage">
+          <End Type="VioMujerModel.MenuImage" Role="MenuImage" Multiplicity="1" />
+          <End Type="VioMujerModel.MenuImageItem" Role="MenuImageItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuImage">
+              <PropertyRef Name="MenuImageId" />
+            </Principal>
+            <Dependent Role="MenuImageItem">
+              <PropertyRef Name="MenuImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificado" Type="DateTime" Precision="3" />
+          <Property Name="FechaUltimoAcceso" Type="DateTime" Precision="3" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Denuncias" Relationship="VioMujerModel.FK_Denuncia_Usuario" FromRole="Usuario" ToRole="Denuncia" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="CiudadId" />
+          </Key>
+          <Property Name="CiudadId" Type="Int64" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartamentoId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Departamento" Relationship="VioMujerModel.FK_Ciudad_Departamento" FromRole="Ciudad" ToRole="Departamento" />
+          <NavigationProperty Name="Denuncias" Relationship="VioMujerModel.FK_Denuncia_Ciudad" FromRole="Ciudad" ToRole="Denuncia" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="DepartamentoId" />
+          </Key>
+          <Property Name="DepartamentoId" Type="Int64" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Ciudads" Relationship="VioMujerModel.FK_Ciudad_Departamento" FromRole="Departamento" ToRole="Ciudad" />
+        </EntityType>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="InformationId" />
+          </Key>
+          <Property Name="InformationId" Type="Int64" Nullable="false" />
+          <Property Name="Texto" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Imagen" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Denuncia">
+          <Key>
+            <PropertyRef Name="DenunciaId" />
+            <PropertyRef Name="CiudadId" />
+            <PropertyRef Name="FechaReporte" />
+            <PropertyRef Name="TotalPages" />
+            <PropertyRef Name="TotalReg" />
+          </Key>
+          <Property Name="DenunciaId" Type="Int64" Nullable="false" />
+          <Property Name="CiudadId" Type="Int64" Nullable="false" />
+          <Property Name="FechaReporte" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="Latitud" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartamentoId" Type="Int64" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AtendidoPorId" Type="Int64" />
+          <Property Name="AtendidoPor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalPages" Type="Int32" Nullable="false" />
+          <Property Name="TotalReg" Type="Int32" Nullable="false" />
+          <Property Name="Ubicacion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Ciudad_Departamento">
+          <End Type="VioMujerModel.Departamento" Role="Departamento" Multiplicity="1" />
+          <End Type="VioMujerModel.Ciudad" Role="Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="DepartamentoId" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Denuncia">
+          <Key>
+            <PropertyRef Name="DenunciaId" />
+          </Key>
+          <Property Name="DenunciaId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CiudadId" Type="Int64" />
+          <Property Name="FechaReporte" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="Latitud" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="AtendidoPor" Type="Int64" />
+          <NavigationProperty Name="Ciudad" Relationship="VioMujerModel.FK_Denuncia_Ciudad" FromRole="Denuncia" ToRole="Ciudad" />
+          <NavigationProperty Name="Usuario" Relationship="VioMujerModel.FK_Denuncia_Usuario" FromRole="Denuncia" ToRole="Usuario" />
+          <Property Name="Ubicacion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Denuncia_Ciudad">
+          <End Type="VioMujerModel.Ciudad" Role="Ciudad" Multiplicity="0..1" />
+          <End Type="VioMujerModel.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="CiudadId" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Denuncia_Usuario">
+          <End Type="VioMujerModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="VioMujerModel.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="AtendidoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VioMujerModelStoreContainer" CdmEntityContainer="VioMujerEntities">
+          <FunctionImportMapping FunctionImportName="DenunciaList" FunctionName="VioMujerModel.Store.DenunciaList" />
+          <FunctionImportMapping FunctionImportName="Autenticar" FunctionName="VioMujerModel.Store.Autenticar">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListaPaginada" FunctionName="VioMujerModel.Store.ListaPaginada" />
+          <EntitySetMapping Name="MenuImages">
+            <EntityTypeMapping TypeName="VioMujerModel.MenuImage">
+              <MappingFragment StoreEntitySet="MenuImage">
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="MenuImageId" ColumnName="MenuImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuImageItems">
+            <EntityTypeMapping TypeName="VioMujerModel.MenuImageItem">
+              <MappingFragment StoreEntitySet="MenuImageItem">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="MenuImageId" ColumnName="MenuImageId" />
+                <ScalarProperty Name="MenuImageItemId" ColumnName="MenuImageItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="VioMujerModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaUltimoAcceso" ColumnName="FechaUltimoAcceso" />
+                <ScalarProperty Name="FechaModificado" ColumnName="FechaModificado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudads">
+            <EntityTypeMapping TypeName="VioMujerModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentoes">
+            <EntityTypeMapping TypeName="VioMujerModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Information">
+            <EntityTypeMapping TypeName="VioMujerModel.Information">
+              <MappingFragment StoreEntitySet="Information">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="InformationId" ColumnName="InformationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Denuncia">
+            <EntityTypeMapping TypeName="VioMujerModel.View_Denuncia">
+              <MappingFragment StoreEntitySet="View_Denuncia">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+                <ScalarProperty Name="AtendidoPor" ColumnName="AtendidoPor" />
+                <ScalarProperty Name="AtendidoPorId" ColumnName="AtendidoPorId" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="DenunciaId" ColumnName="DenunciaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Denuncias">
+            <EntityTypeMapping TypeName="VioMujerModel.Denuncia">
+              <MappingFragment StoreEntitySet="Denuncia">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="AtendidoPor" ColumnName="AtendidoPor" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="DenunciaId" ColumnName="DenunciaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

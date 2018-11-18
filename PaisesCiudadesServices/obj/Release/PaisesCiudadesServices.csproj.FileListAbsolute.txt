@@ -1,0 +1,6 @@
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\bin\Release\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\bin\Release\PaisesCiudadesServices.pdb
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Release\PaisesCiudadesServices.csprojAssemblyReference.cache
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Release\PaisesCiudadesServices.csproj.CoreCompileInputs.cache
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Release\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\PaisesCiudadesServices\obj\Release\PaisesCiudadesServices.pdb

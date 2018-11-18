@@ -1,0 +1,15 @@
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Test.exe.config
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Test.exe
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Test.pdb
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Datos.dll
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\EntityFramework.dll
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\PaisesCiudadesServices.dll
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Datos.pdb
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\Datos.dll.config
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\PaisesCiudadesServices.pdb
+F:\Fedesoft\VioMujerWeb\Test\bin\Debug\EntityFramework.xml
+F:\Fedesoft\VioMujerWeb\Test\obj\Debug\Test.csprojAssemblyReference.cache
+F:\Fedesoft\VioMujerWeb\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+F:\Fedesoft\VioMujerWeb\Test\obj\Debug\Test.csproj.CopyComplete
+F:\Fedesoft\VioMujerWeb\Test\obj\Debug\Test.exe
+F:\Fedesoft\VioMujerWeb\Test\obj\Debug\Test.pdb

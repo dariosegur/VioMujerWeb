@@ -1,0 +1,55 @@
+﻿@using VioMujerWeb.Models;
+@model VioMujerWeb.Models.Denuncia
+@{
+    ViewBag.Title = "Denuncia";
+    string hederView = "~/Views/Shared/Grid/Header.cshtml";
+    var filtro = ((Negocio.Denuncia)Model.Filtros) ?? new Negocio.Denuncia();
+}
+
+<h2>Denuncia</h2>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            @Html.Partial(hederView, new GridHeader(Model, "ID#", "DenunciaId", filtro.DenunciaId.ToString()))
+            @Html.Partial(hederView, new GridHeader(Model, "Ubicacion", "Ubicación", filtro.Ubicacion))
+            @Html.Partial(hederView, new GridHeader(Model, "Telefono", "Telefono", filtro.Telefono))
+            @Html.Partial(hederView, new GridHeader(Model, "Dirección", "Direccion", filtro.Direccion))
+            @Html.Partial(hederView, new GridHeader(Model, "Descripción", "Descripcion", filtro.Descripcion))
+            @Html.Partial(hederView, new GridHeader(Model, "Fecha reporte", "FechaReporte", "") { Hasfilter=false})
+            @Html.Partial(hederView, new GridHeader(Model, "Atendido por", "AtendidoPor", "") { Hasfilter = false })
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.Denuncias)
+        {
+        <tr onclick="">
+            <td>@m.DenunciaId</td>
+            <td>@m.Ubicacion</td>
+            <td>@m.Telefono</td>
+            <td>@m.Direccion</td>
+            <td>@m.Descripcion</td>
+            <td>@m.FechaReporte</td>
+            @if (!string.IsNullOrEmpty(m.AtendidoPor))
+            {
+                <td>@m.AtendidoPor</td>
+            }
+            else
+            {
+                <td>
+                    <svg height="15" width="15">
+                        <line x1="0" y1="0" x2="15" y2="15" style="stroke:#0F0; stroke-width:5" />
+                        <line x1="0" y1="15" x2="15" y2="0" style="stroke:#0F0; stroke-width:5" />
+                    </svg>
+                    Atendido
+                </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+@Html.Partial("~/Views/Shared/Grid/Pagination.cshtml", Model)
+
+@section scripts{
+    <script src="~/Scripts/App/Denuncia.js"></script>
+}
